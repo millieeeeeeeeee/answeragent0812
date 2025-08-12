@@ -2,4 +2,5 @@ flask
 line-bot-sdk
 pyngrok
 google-genai
+google-cloud-secret-manager
 gunicorn
