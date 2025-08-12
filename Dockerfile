@@ -10,6 +10,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # 複製程式碼
 COPY answeragent.py ./
+COPY utils ./utils
 
 # 開放容器的 8080 埠口
 EXPOSE 8080
