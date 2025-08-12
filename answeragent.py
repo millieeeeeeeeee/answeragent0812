@@ -12,10 +12,10 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 import json
 from google.cloud import secretmanager
 
+from utils.deifne import *
 
 # 建立 Flask app
 app = Flask(__name__)
-
 
 def access_secret_version(project_id, secret_id, version_id="latest"):
     client = secretmanager.SecretManagerServiceClient()
@@ -34,12 +34,6 @@ secret = access_secret_version(PROJECT_ID, "LINE_CHANNEL_SECRET")
 # 初始化 LineBotApi 與 WebhookHandler
 line_bot_api = LineBotApi(access_token)
 handler = WebhookHandler(secret)
-
-
-
-# 功能1：回原文
-def echo_message(msg):
-    return TextSendMessage(text=msg)
 
 # 主 Webhook 路由
 @app.route("/", methods=['POST'])
