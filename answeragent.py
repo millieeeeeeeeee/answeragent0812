@@ -12,7 +12,7 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 import json
 from google.cloud import secretmanager
 
-from utils.deifne import *
+from utils.define import *
 
 # 建立 Flask app
 app = Flask(__name__)
